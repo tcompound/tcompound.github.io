@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T Compound | Development Studio</title>
+    <title>Team | Light Studio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -21,11 +21,7 @@
             --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             background-color: var(--bg-dark);
@@ -44,14 +40,12 @@
             background-size: 100% 100%, 40px 40px, 40px 40px;
         }
 
-        /* Floating Navigation Header */
         header {
             position: fixed;
             top: 20px;
             z-index: 100;
             background: rgba(18, 20, 28, 0.85);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
             border: 1px solid var(--border-subtle);
             padding: 6px 12px 6px 18px;
             border-radius: 99px;
@@ -60,34 +54,11 @@
             gap: 24px;
         }
 
-        .nav-brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: var(--text-main);
-        }
+        .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text-main); }
+        .nav-logo-img { height: 20px; width: auto; border-radius: 4px; }
+        .nav-title { font-family: var(--font-heading); font-weight: 700; font-size: 0.95rem; }
 
-        .nav-logo-img {
-            height: 20px;
-            width: auto;
-            display: block;
-            border-radius: 4px;
-        }
-
-        .nav-title {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 0.95rem;
-            letter-spacing: -0.02em;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
+        nav { display: flex; align-items: center; gap: 4px; }
         nav a {
             color: var(--text-muted);
             text-decoration: none;
@@ -97,99 +68,76 @@
             border-radius: 99px;
             transition: all 0.2s ease;
         }
+        nav a:hover, nav a.active { color: var(--text-main); background: rgba(255, 255, 255, 0.05); }
 
-        nav a:hover, nav a.active {
-            color: var(--text-main);
-            background: rgba(255, 255, 255, 0.05);
+        .container { width: 100%; max-width: 960px; padding: 0 24px; }
+        .page-header { margin-top: 150px; margin-bottom: 24px; }
+        .section-title { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; }
+        .section-subtitle { color: var(--text-muted); font-size: 1rem; }
+
+        .category-label {
+            font-family: var(--font-heading);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-dim);
+            margin: 32px 0 16px 0;
         }
 
-        .container {
-            width: 100%;
-            max-width: 960px;
-            padding: 0 24px;
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 40px;
         }
 
-        /* Hero Section */
-        .hero {
-            margin-top: 180px;
-            margin-bottom: 120px;
-            text-align: center;
+        .card {
+            background: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 24px;
+            transition: border-color 0.2s ease;
+        }
+        .card:hover { border-color: var(--border-hover); }
+
+        .team-card {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
+            padding: 20px;
         }
 
-        .hero-logo-wrapper {
-            position: relative;
-            margin-bottom: 28px;
-        }
-
-        .hero-logo {
-            width: 110px;
-            height: auto;
-            display: block;
-            position: relative;
-            z-index: 2;
+        .team-avatar-img {
+            width: 54px;
+            height: 54px;
             border-radius: 12px;
-        }
-
-        .brand-title {
-            font-family: var(--font-heading);
-            font-size: 3.5rem;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            color: var(--text-main);
-            margin-bottom: 12px;
-            line-height: 1.1;
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 32px;
-            max-width: 540px;
-            font-weight: 400;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .btn {
-            background: rgba(255, 255, 255, 0.03);
+            object-fit: cover;
             border: 1px solid var(--border-subtle);
-            color: var(--text-main);
-            padding: 10px 22px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.2s ease;
+            margin-bottom: 16px;
+        }
+
+        .member-name { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; margin-bottom: 2px; }
+        .badge { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--text-dim); margin-bottom: 16px; }
+
+        .btn-view {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-subtle);
+            padding: 6px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.2s;
+            margin-top: auto;
         }
 
-        .btn:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: var(--border-hover);
-        }
+        .btn-view:hover { background: rgba(255, 255, 255, 0.12); border-color: var(--border-hover); }
 
-        .btn-primary {
-            background: var(--text-main);
-            color: var(--bg-dark);
-            border-color: var(--text-main);
-        }
-
-        .btn-primary:hover {
-            background: #e5e7eb;
-            border-color: #e5e7eb;
-        }
-
-        /* Minimal Footer */
         footer {
             margin-top: auto;
             width: 100%;
@@ -200,100 +148,74 @@
             background: rgba(9, 10, 15, 0.8);
         }
 
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer-left {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .footer-left img {
-            height: 18px;
-            width: auto;
-            border-radius: 3px;
-        }
-
-        .footer-left p {
-            color: var(--text-dim);
-            font-size: 0.85rem;
-        }
-
-        .footer-nav {
-            display: flex;
-            gap: 20px;
-        }
-
-        .footer-nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: color 0.2s;
-        }
-
-        .footer-nav a:hover {
-            color: var(--text-main);
-        }
-
-        @media (max-width: 640px) {
-            .brand-title { font-size: 2.5rem; }
-            .hero-logo { width: 90px; }
-            .footer-content { flex-direction: column; align-items: flex-start; }
-        }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .footer-left { display: flex; align-items: center; gap: 12px; }
+        .footer-left img { height: 18px; width: auto; border-radius: 3px; }
+        .footer-left p { color: var(--text-dim); font-size: 0.85rem; }
+        .footer-nav { display: flex; gap: 20px; }
+        .footer-nav a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; }
+        .footer-nav a:hover { color: var(--text-main); }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="index.html" class="nav-brand">
-            <img src="Screenshot 2026-08-16 231534.png" alt="T Compound Logo" class="nav-logo-img">
-            <span class="nav-title">T COMPOUND</span>
+        <a href="../" class="nav-brand">
+            <img src="../istockphoto-653952686-612x612.jpg" alt="Light Studio Logo" class="nav-logo-img">
+            <span class="nav-title">LIGHT STUDIO</span>
         </a>
         <nav>
-            <a href="index.html" class="active">Home</a>
-            <a href="services.html">Services</a>
-            <a href="team.html">Team</a>
+            <a href="../">Home</a>
+            <a href="../services">Services</a>
+            <a href="../team" class="active">Team</a>
             <a href="https://discord.gg/d57aBGqqAv" target="_blank">Discord</a>
         </nav>
     </header>
 
     <div class="container">
-        <section class="hero">
-            <div class="hero-logo-wrapper">
-                <img src="Screenshot 2026-08-16 231534.png" alt="T Compound Logo" class="hero-logo">
+        <div class="page-header">
+            <h1 class="section-title">Our Team</h1>
+            <p class="section-subtitle">The developers behind Light Studio</p>
+        </div>
+
+        <div class="category-label">Leadership</div>
+        <div class="grid-cards">
+            <div class="card team-card">
+                <img src="../istockphoto-653952686-612x612.jpg" alt="t Logo" class="team-avatar-img">
+                <div class="member-name">t</div>
+                <span class="badge">Founder</span>
+                <a href="../t" class="btn-view">View Profile <i class="fas fa-arrow-right"></i></a>
             </div>
-            <h1 class="brand-title">T COMPOUND</h1>
-            <p class="subtitle">Custom FiveM development, tailored web interfaces, and automated Discord integrations built for performance.</p>
-            
-            <div class="btn-group">
-                <a href="https://discord.gg/d57aBGqqAv" target="_blank" class="btn btn-primary">
-                    <i class="fab fa-discord"></i> Join Discord
-                </a>
-                <a href="services.html" class="btn">
-                    Explore Services <i class="fas fa-arrow-right"></i>
-                </a>
+            <div class="card team-card">
+                <img src="../b642561a55380f0b60c8ef8ba7ff890d.webp" alt="mir Logo" class="team-avatar-img">
+                <div class="member-name">mir</div>
+                <span class="badge">Owner</span>
+                <a href="../mir" class="btn-view">View Profile <i class="fas fa-arrow-right"></i></a>
             </div>
-        </section>
+        </div>
+
+        <div class="category-label">Development</div>
+        <div class="grid-cards" style="margin-bottom: 100px;">
+            <div class="card team-card">
+                <img src="../_I believe that the measure of a person's life is….jpg" alt="tmax Logo" class="team-avatar-img">
+                <div class="member-name">tmax</div>
+                <span class="badge">Discord Bot Dev</span>
+            </div>
+        </div>
     </div>
 
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-left">
-                    <img src="Screenshot 2026-08-16 231534.png" alt="T Compound Logo">
-                    <p>&copy; T Compound. All rights reserved.</p>
+                    <img src="../istockphoto-653952686-612x612.jpg" alt="Light Studio Logo">
+                    <p>&copy; Light Studio. All rights reserved.</p>
                 </div>
 
                 <div class="footer-nav">
-                    <a href="index.html">Home</a>
-                    <a href="services.html">Services</a>
-                    <a href="team.html">Team</a>
+                    <a href="../">Home</a>
+                    <a href="../services">Services</a>
+                    <a href="../team">Team</a>
                     <a href="https://discord.gg/d57aBGqqAv" target="_blank">Discord</a>
                 </div>
             </div>
