@@ -1,1 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team | T Compound</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #090a0f;
+            --surface-card: #12141c;
+            --border-subtle: rgba(255, 255, 255, 0.07);
+            --border-hover: rgba(255, 255, 255, 0.18);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --text-dim: #6b7280;
+            --font-heading: 'Space Grotesk', -apple-system, sans-serif;
+            --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+        }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: 
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 119, 198, 0.12), transparent),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
+        }
+
+        header {
+            position: fixed;
+            top: 20px;
+            z-index: 100;
+            background: rgba(18, 20, 28, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-subtle);
+            padding: 6px 12px 6px 18px;
+            border-radius: 99px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text-main); }
+        .nav-logo-img { height: 20px; width: auto; border-radius: 4px; }
+        .nav-title { font-family: var(--font-heading); font-weight: 700; font-size: 0.95rem; }
+
+        nav { display: flex; align-items: center; gap: 4px; }
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 99px;
+            transition: all 0.2s ease;
+        }
+        nav a:hover, nav a.active { color: var(--text-main); background: rgba(255, 255, 255, 0.05); }
+
+        .container { width: 100%; max-width: 960px; padding: 0 24px; }
+        .page-header { margin-top: 150px; margin-bottom: 24px; }
+        .section-title { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; }
+        .section-subtitle { color: var(--text-muted); font-size: 1rem; }
+
+        .category-label {
+            font-family: var(--font-heading);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-dim);
+            margin: 32px 0 16px 0;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 24px;
+            transition: border-color 0.2s ease;
+        }
+        .card:hover { border-color: var(--border-hover); }
+
+        .team-card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        .team-avatar-img {
+            width: 54px;
+            height: 54px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 1px solid var(--border-subtle);
+            margin-bottom: 16px;
+        }
+
+        .member-name { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; margin-bottom: 2px; }
+        .badge { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--text-dim); margin-bottom: 16px; }
+
+        .btn-view {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-subtle);
+            padding: 6px 14px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.2s;
+            margin-top: auto;
+        }
+
+        .btn-view:hover { background: rgba(255, 255, 255, 0.12); border-color: var(--border-hover); }
+
+        footer {
+            margin-top: auto;
+            width: 100%;
+            border-top: 1px solid var(--border-subtle);
+            padding: 32px 0;
+            display: flex;
+            justify-content: center;
+            background: rgba(9, 10, 15, 0.8);
+        }
+
+        .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .footer-left { display: flex; align-items: center; gap: 12px; }
+        .footer-left img { height: 18px; width: auto; border-radius: 3px; }
+        .footer-left p { color: var(--text-dim); font-size: 0.85rem; }
+        .footer-nav { display: flex; gap: 20px; }
+        .footer-nav a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; }
+        .footer-nav a:hover { color: var(--text-main); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="nav-brand">
+            <img src="Screenshot 2026-08-16 231534.png" alt="T Compound Logo" class="nav-logo-img">
+            <span class="nav-title">T COMPOUND</span>
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="team.html" class="active">Team</a>
+            <a href="https://discord.gg/d57aBGqqAv" target="_blank">Discord</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="page-header">
+            <h1 class="section-title">Our Team</h1>
+            <p class="section-subtitle">The developers behind T Compound</p>
+        </div>
+
+        <div class="category-label">Leadership</div>
+        <div class="grid-cards">
+            <div class="card team-card">
+                <img src="Screenshot 2026-08-16 231534.png" alt="t Logo" class="team-avatar-img">
+                <div class="member-name">t</div>
+                <span class="badge">Founder</span>
+                <a href="t.html" class="btn-view">View Profile <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="card team-card">
+                <img src="b642561a55380f0b60c8ef8ba7ff890d.webp" alt="mir Logo" class="team-avatar-img">
+                <div class="member-name">mir</div>
+                <span class="badge">Owner</span>
+                <a href="mir.html" class="btn-view">View Profile <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <div class="category-label">Development</div>
+        <div class="grid-cards" style="margin-bottom: 100px;">
+            <div class="card team-card">
+                <img src="_I believe that the measure of a person's life is….jpg" alt="tmax Logo" class="team-avatar-img">
+                <div class="member-name">tmax</div>
+                <span class="badge">Discord Bot Dev</span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <img src="Screenshot 2026-08-16 231534.png" alt="T Compound Logo">
+                    <p>&copy; T Compound. All rights reserved.</p>
+                </div>
+
+                <div class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="team.html">Team</a>
+                    <a href="https://discord.gg/d57aBGqqAv" target="_blank">Discord</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
