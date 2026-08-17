@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>t | Developer Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #090a0f;
+            --surface-card: rgba(18, 20, 28, 0.75);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --font-heading: 'Space Grotesk', -apple-system, sans-serif;
+            --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bg-blur {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('Screenshot 2026-08-16 231534.png');
+            background-size: cover;
+            background-position: center;
+            filter: blur(40px) brightness(0.35);
+            transform: scale(1.1);
+            z-index: 1;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 24px;
+            left: 24px;
+            z-index: 10;
+            background: rgba(18, 20, 28, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 99px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .back-btn:hover { background: rgba(255, 255, 255, 0.1); }
+
+        .profile-card {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 420px;
+            background: var(--surface-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .profile-avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .profile-title h1 {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .profile-title .role {
+            color: #60a5fa;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .profile-title .meta {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            margin-top: 2px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .info-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .info-box .text-primary {
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .info-box .text-sub {
+            color: var(--text-muted);
+            font-size: 0.7rem;
+        }
+
+        .discord-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            background: #5865f2;
+            color: #fff;
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+            margin-bottom: 16px;
+        }
+
+        .discord-btn:hover { background: #4752c4; }
+
+        .social-icons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-icon-btn {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .social-icon-btn:hover { background: rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body>
+
+    <div class="bg-blur"></div>
+
+    <a href="team.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Team</a>
+
+    <div class="profile-card">
+        <div class="profile-header">
+            <img src="Screenshot 2026-08-16 231534.png" alt="t" class="profile-avatar">
+            <div class="profile-title">
+                <h1>t </h1>
+                <div class="role">T Compound — Founder</div>
+                <div class="meta">Lead Developer</div>
+            </div>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-box">
+                <img src="Screenshot 2026-08-16 231534.png" alt="t">
+                <div>
+                    <div class="text-primary">t</div>
+                    <div class="text-sub">Discord • Founder</div>
+                </div>
+            </div>
+            <div class="info-box">
+                <img src="Screenshot 2026-08-16 231534.png" alt="T Compound">
+                <div>
+                    <div class="text-primary">T Compound</div>
+                    <div class="text-sub">Development Studio</div>
+                </div>
+            </div>
+        </div>
+
+        <a href="https://discord.gg/d57aBGqqAv" target="_blank" class="discord-btn">
+            <i class="fab fa-discord"></i> Join our Discord
+        </a>
+
+        <div class="social-icons">
+            <a href="https://discord.gg/d57aBGqqAv" target="_blank" class="social-icon-btn"><i class="fab fa-discord"></i></a>
+        </div>
+    </div>
+
+</body>
+</html>
