@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team | Light Studio</title>
+    <title>Light Studio | High Quality Assets & Development</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -71,72 +71,82 @@
         nav a:hover, nav a.active { color: var(--text-main); background: rgba(255, 255, 255, 0.05); }
 
         .container { width: 100%; max-width: 960px; padding: 0 24px; }
-        .page-header { margin-top: 150px; margin-bottom: 24px; }
-        .section-title { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; }
-        .section-subtitle { color: var(--text-muted); font-size: 1rem; }
-
-        .category-label {
-            font-family: var(--font-heading);
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--text-dim);
-            margin: 32px 0 16px 0;
-        }
-
-        .grid-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 16px;
-            margin-bottom: 40px;
-        }
-
-        .card {
-            background: var(--surface-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 12px;
-            padding: 24px;
-            transition: border-color 0.2s ease;
-        }
-        .card:hover { border-color: var(--border-hover); }
-
-        .team-card {
+        
+        .hero {
+            margin-top: 180px;
+            margin-bottom: 80px;
+            text-align: center;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            padding: 20px;
+            align-items: center;
         }
 
-        .team-avatar-img {
-            width: 54px;
-            height: 54px;
-            border-radius: 12px;
-            object-fit: cover;
-            border: 1px solid var(--border-subtle);
-            margin-bottom: 16px;
-        }
-
-        .member-name { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; margin-bottom: 2px; }
-        .badge { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--text-dim); margin-bottom: 16px; }
-
-        .btn-view {
+        .hero-badge {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            font-size: 0.78rem;
-            font-weight: 600;
-            color: var(--text-main);
-            background: rgba(255, 255, 255, 0.05);
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--border-subtle);
-            padding: 6px 14px;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: all 0.2s;
-            margin-top: auto;
+            padding: 6px 16px;
+            border-radius: 99px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 24px;
         }
 
-        .btn-view:hover { background: rgba(255, 255, 255, 0.12); border-color: var(--border-hover); }
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: var(--text-main);
+            color: var(--bg-dark);
+            padding: 12px 28px;
+            border-radius: 99px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover { transform: translateY(-2px); opacity: 0.9; }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            border: 1px solid var(--border-subtle);
+            padding: 12px 28px;
+            border-radius: 99px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); border-color: var(--border-hover); }
 
         footer {
             margin-top: auto;
@@ -160,62 +170,46 @@
 <body>
 
     <header>
-        <a href="../" class="nav-brand">
-            <img src="../istockphoto-653952686-612x612.jpg" alt="Light Studio Logo" class="nav-logo-img">
+        <a href="./" class="nav-brand">
+            <img src="istockphoto-653952686-612x612.jpg" alt="Light Studio Logo" class="nav-logo-img">
             <span class="nav-title">LIGHT STUDIO</span>
         </a>
         <nav>
-            <a href="../">Home</a>
-            <a href="../services">Services</a>
-            <a href="../team" class="active">Team</a>
+            <a href="./" class="active">Home</a>
+            <a href="services">Services</a>
+            <a href="team">Team</a>
             <a href="https://discord.gg/d57aBGqqAv" target="_blank">Discord</a>
         </nav>
     </header>
 
     <div class="container">
-        <div class="page-header">
-            <h1 class="section-title">Our Team</h1>
-            <p class="section-subtitle">The developers behind Light Studio</p>
-        </div>
-
-        <div class="category-label">Leadership</div>
-        <div class="grid-cards">
-            <div class="card team-card">
-                <img src="../istockphoto-653952686-612x612.jpg" alt="t Logo" class="team-avatar-img">
-                <div class="member-name">t</div>
-                <span class="badge">Founder</span>
-                <a href="../t" class="btn-view">View Profile <i class="fas fa-arrow-right"></i></a>
+        <section class="hero">
+            <div class="hero-badge">
+                <i class="fas fa-sparkles"></i> High Quality Custom Development
             </div>
-            <div class="card team-card">
-                <img src="../b642561a55380f0b60c8ef8ba7ff890d.webp" alt="mir Logo" class="team-avatar-img">
-                <div class="member-name">mir</div>
-                <span class="badge">Owner</span>
-                <a href="../mir" class="btn-view">View Profile <i class="fas fa-arrow-right"></i></a>
+            <h1 class="hero-title">Welcome to Light Studio</h1>
+            <p class="hero-subtitle">We craft premium scripts, custom Discord bots, and tailored digital solutions for your community.</p>
+            <div class="hero-buttons">
+                <a href="https://discord.gg/d57aBGqqAv" target="_blank" class="btn-primary">
+                    <i class="fab fa-discord"></i> Join Discord
+                </a>
+                <a href="team" class="btn-secondary">Meet the Team</a>
             </div>
-        </div>
-
-        <div class="category-label">Development</div>
-        <div class="grid-cards" style="margin-bottom: 100px;">
-            <div class="card team-card">
-                <img src="../_I believe that the measure of a person's life is….jpg" alt="tmax Logo" class="team-avatar-img">
-                <div class="member-name">tmax</div>
-                <span class="badge">Discord Bot Dev</span>
-            </div>
-        </div>
+        </section>
     </div>
 
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-left">
-                    <img src="../istockphoto-653952686-612x612.jpg" alt="Light Studio Logo">
+                    <img src="istockphoto-653952686-612x612.jpg" alt="Light Studio Logo">
                     <p>&copy; Light Studio. All rights reserved.</p>
                 </div>
 
                 <div class="footer-nav">
-                    <a href="../">Home</a>
-                    <a href="../services">Services</a>
-                    <a href="../team">Team</a>
+                    <a href="./">Home</a>
+                    <a href="services">Services</a>
+                    <a href="team">Team</a>
                     <a href="https://discord.gg/d57aBGqqAv" target="_blank">Discord</a>
                 </div>
             </div>
