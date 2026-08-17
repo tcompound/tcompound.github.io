@@ -1,1 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | T Compound</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #090a0f;
+            --surface-card: #12141c;
+            --border-subtle: rgba(255, 255, 255, 0.07);
+            --border-hover: rgba(255, 255, 255, 0.18);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --text-dim: #6b7280;
+            --font-heading: 'Space Grotesk', -apple-system, sans-serif;
+            --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: 
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 119, 198, 0.12), transparent),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
+        }
+
+        header {
+            position: fixed;
+            top: 20px;
+            z-index: 100;
+            background: rgba(18, 20, 28, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-subtle);
+            padding: 6px 12px 6px 18px;
+            border-radius: 99px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        .nav-logo-img {
+            height: 20px;
+            width: auto;
+            display: block;
+            border-radius: 4px;
+        }
+
+        .nav-title {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: -0.02em;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 99px;
+            transition: all 0.2s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 960px;
+            padding: 0 24px;
+        }
+
+        .page-header {
+            margin-top: 150px;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-bottom: 100px;
+        }
+
+        .card {
+            background: var(--surface-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 24px;
+            transition: border-color 0.2s ease;
+        }
+
+        .card:hover {
+            border-color: var(--border-hover);
+        }
+
+        .feature-card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 16px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: -0.01em;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        footer {
+            margin-top: auto;
+            width: 100%;
+            border-top: 1px solid var(--border-subtle);
+            padding: 32px 0;
+            display: flex;
+            justify-content: center;
+            background: rgba(9, 10, 15, 0.8);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-left img {
+            height: 18px;
+            width: auto;
+            border-radius: 3px;
+        }
+
+        .footer-left p {
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .footer-nav a:hover {
+            color: var(--text-main);
+        }
+
+        @media (max-width: 640px) {
+            .footer-content { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="nav-brand">
+            <img src="Screenshot 2026-08-16 231534.png" alt="T Compound Logo" class="nav-logo-img">
+            <span class="nav-title">T COMPOUND</span>
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="team.html">Team</a>
+            <a href="https://discord.gg/d57aBGqqAv" target="_blank">Discord</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="page-header">
+            <h1 class="section-title">What We Build</h1>
+            <p class="section-subtitle">Dedicated engineering for modern communities</p>
+        </div>
+
+        <div class="grid-3">
+            <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-server"></i></div>
+                <h3>FiveM Development</h3>
+                <p>Custom scripts, full server optimization, UI design, and bug fixing tailored to QBCore, ESX, or standalone frameworks.</p>
+            </div>
+
+            <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-code"></i></div>
+                <h3>Web Development</h3>
+                <p>Responsive landing pages, custom portals, and modern web applications built with clean code and high performance.</p>
+            </div>
+
+            <div class="card feature-card">
+                <div class="feature-icon"><i class="fas fa-robot"></i></div>
+                <h3>Discord Automation</h3>
+                <p>Feature-rich bots, administration tools, API integrations, and community management solutions.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <img src="Screenshot 2026-08-16 231534.png" alt="T Compound Logo">
+                    <p>&copy; T Compound. All rights reserved.</p>
+                </div>
+
+                <div class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="team.html">Team</a>
+                    <a href="https://discord.gg/d57aBGqqAv" target="_blank">Discord</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
